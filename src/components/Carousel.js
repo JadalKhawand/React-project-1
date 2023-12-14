@@ -52,12 +52,27 @@ const goToNext = () => {
   const newIndex = isLastSlide?0: currentIndex +1;
   setCurrentIndex(newIndex)
 }
+const dotsContainerStyles = {
+  display: 'flex',
+  justifyContent: 'center'
+}
+const dotStyles = {
+  margin: '0 3px',
+  cursor: 'pointer',
+  fontSize: '20px'
+}
 
+const goToSlide=(slideIndex)=>{
+  setCurrentIndex(slideIndex)
+}
   return (
     <div style={resetStyles}>
       <div style={leftArrow} onClick={goToPrevious}>⇦</div>
       <div style={rightArrow} onClick={goToNext}>⇨</div>
-      <div style={slideStyles}></div>  
+      <div style={slideStyles}></div> 
+      <div style={dotsContainerStyles}>
+        {slides.map((slide, slideIndex)=>(<div key={slideIndex} style={dotStyles} onClick={()=> goToSlide(slideIndex)}>☻</div>))}
+      </div> 
       
     </div>
   )
