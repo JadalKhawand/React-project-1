@@ -48,13 +48,13 @@ function Form() {
   return (
     <form style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
       {/* Pass label prop to identify the input */}
-      <TextInput label='Name:' onChange={handleNameChange} value={name} />
+      <TextInput label='Name ' onChange={handleNameChange} value={name} />
       {/* Pass label prop to identify the input */}
-      <TextInput label='Lastname:' onChange={handleLastnameChange} value={lastname} />
-      <TextInput label='Password:' onChange={handlePasswordChange} value={password} />
-      <TextInput label='Confirm Password:' onChange={handleConfirmPasswordChange} value={confirmPassword} />
+      <TextInput label='Lastname ' onChange={handleLastnameChange} value={lastname} />
+      <TextInput label='Password ' onChange={handlePasswordChange} value={password} />
+      <TextInput label='Confirm Password ' onChange={handleConfirmPasswordChange} value={confirmPassword} />
 
-      <button onClick={submitForm} type='button'>Submit</button>
+      <button style={{width: '80px', textAlign: 'center'}} onClick={submitForm} type='button'>Submit</button>
     </form>
   );
 }
