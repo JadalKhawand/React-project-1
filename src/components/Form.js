@@ -19,6 +19,8 @@ function Form() {
   const [name, setName] = useState('');
   const [lastname, setLastname] = useState('')
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
   
 
   function handleNameChange(event) {
@@ -32,9 +34,15 @@ function Form() {
   function handleLastnameChange(event){
     setLastname(event.target.value)
   }
+  function handlePasswordChange(event){
+    setPassword(event.target.value)
+  }
+  function handleConfirmPasswordChange(event){
+    setConfirmPassword(event.target.value)
+  }
 
   function submitForm() {
-    alert(`You submitted ${name} and ${lastname}`);
+    alert(`Welcome ${name} ${lastname}`);
   }
 
   return (
@@ -43,9 +51,8 @@ function Form() {
       <TextInput label='Name:' onChange={handleNameChange} value={name} />
       {/* Pass label prop to identify the input */}
       <TextInput label='Lastname:' onChange={handleLastnameChange} value={lastname} />
-      <TextInput label='Password:' onChange={handleEmailChange} value={Password} />
-      <TextInput label='Confirm Password:' onChange={handleEmailChange} value={Password} />
-      <TextInput label='Mobile:' onChange={handleEmailChange} value={Mobile} />
+      <TextInput label='Password:' onChange={handlePasswordChange} value={password} />
+      <TextInput label='Confirm Password:' onChange={handleConfirmPasswordChange} value={confirmPassword} />
 
       <button onClick={submitForm} type='button'>Submit</button>
     </form>
